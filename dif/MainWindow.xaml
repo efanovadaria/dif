@@ -1,0 +1,59 @@
+﻿<Window x:Class="dif.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Калькулятор чаевых"
+        Height="350"
+        Width="400">
+
+    <Grid Margin="10">
+
+        <!-- Сумма счета -->
+        <Label Content="Сумма счета:"
+               Margin="10,10,0,0"/>
+
+        <TextBox x:Name="txtBill"
+                 Margin="10,35,10,0"
+                 Height="25"
+                 VerticalAlignment="Top"/>
+
+        <!-- Количество гостей -->
+        <Label Content="Количество гостей:"
+               Margin="10,70,0,0"/>
+
+        <TextBox x:Name="txtGuests"
+                 Margin="10,95,10,0"
+                 Height="25"
+                 VerticalAlignment="Top"/>
+
+        <!-- Выбор чаевых -->
+        <Label Content="Чаевые:"
+               Margin="10,130,0,0"/>
+
+        <ComboBox x:Name="cmbTips"
+                  Margin="10,155,10,0"
+                  Height="25"
+                  VerticalAlignment="Top">
+
+            <ComboBoxItem Content="0"/>
+            <ComboBoxItem Content="5"/>
+            <ComboBoxItem Content="10"/>
+            <ComboBoxItem Content="15"/>
+
+        </ComboBox>
+
+        <!-- Кнопка -->
+        <Button Content="Рассчитать"
+                Margin="10,200,10,0"
+                Height="35"
+                VerticalAlignment="Top"
+                Click="buttonCalculate_Click"/>
+
+        <!-- Результат -->
+        <TextBlock x:Name="txtResult"
+                   Margin="10,250,10,0"
+                   FontSize="16"
+                   FontWeight="Bold"
+                   TextWrapping="Wrap"/>
+
+    </Grid>
+</Window>
