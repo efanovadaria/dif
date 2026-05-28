@@ -78,5 +78,49 @@ namespace difTests
 
             Assert.AreNotEqual(400, result);
         }
+        [TestMethod]
+        public void CalculateTotal_MinimumBillAmount_ReturnsCorrectValue()
+        {
+            double result =
+                difLogic.CalculateTotal(1, 1, 0);
+
+            Assert.AreEqual(1, result);
+        }
+
+        [TestMethod]
+        public void CalculateTotal_MinimumGuests_ReturnsCorrectValue()
+        {
+            double result =
+                difLogic.CalculateTotal(1000, 1, 5);
+
+            Assert.AreEqual(1050, result);
+        }
+
+        [TestMethod]
+        public void CalculateTotal_LargeBillAmount_ReturnsCorrectValue()
+        {
+            double result =
+                difLogic.CalculateTotal(1000000, 10, 15);
+
+            Assert.AreEqual(115000, result);
+        }
+
+        [TestMethod]
+        public void CalculateTotal_MinimumDecimalBill_ReturnsCorrectValue()
+        {
+            double result =
+                difLogic.CalculateTotal(0.01, 1, 0);
+
+            Assert.AreEqual(0.01, result);
+        }
+
+        [TestMethod]
+        public void CalculateTotal_LargeGuestsCount_ReturnsCorrectValue()
+        {
+            double result =
+                difLogic.CalculateTotal(1000, 100, 10);
+
+            Assert.AreEqual(11, result);
+        }
     }
 }
